@@ -2,8 +2,8 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/Logo.png.jpg';
-import infrablok from "../assets/infrablok.jpg"
+import Logo from '../assets/Logo.jpg.jpg';
+
 const Navbar = () => {
     return (
         <>

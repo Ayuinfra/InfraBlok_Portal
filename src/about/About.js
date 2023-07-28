@@ -6,6 +6,9 @@ const About = () => {
     <div>
       <h1>About InfraBlok India Pvt. Ltd</h1>
       {/* Display your company data here */}
+      <p>
+        Hiiiii About Me 
+      </p>
     </div>
   );
 };
