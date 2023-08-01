@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import TeamCard from "./TeamCard";
-import TeamAccordion from "./TeamAccordion";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const TeamDetails = () => {
   const [teamMember, setTeamMember] = useState([]);
@@ -68,11 +69,13 @@ const TeamDetails = () => {
       container
       spacing={2}
       sx={{
-        display: "flex",
+
+        flex: 1,
         flexDirection: "column",
         alignItems: "center",
-        marginTop: "1rem",
-        marginBottom: "2rem",
+        justifyContent: "center",
+        marginTop: "50px",
+        position:"fixed"
       }}
     >
       <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -80,7 +83,14 @@ const TeamDetails = () => {
       </Grid>
 
       <Grid item xs={12} sm={6} md={8} lg={9}>
-        <TeamAccordion teamMembers={getTeamMembersByLocation()} />
+     
+        <Carousel showThumbs={false} showStatus={false}>
+          {getTeamMembersByLocation().map((member) => (
+            <div key={member.id}>
+              <TeamCard memberDetails={member} />
+            </div>
+          ))}
+        </Carousel>
       </Grid>
     </Grid>
   );

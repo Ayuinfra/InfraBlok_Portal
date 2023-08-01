@@ -3,11 +3,9 @@ import { Avatar, Card, CardActionArea, CardContent, Typography } from "@mui/mate
 
 const TeamCard = ({ memberDetails }) => {
   return (
-    <Card sx={{ maxWidth: "100%", width: 800 }}>
-      <CardActionArea style={{ backgroundColor: "#8FBC8F" }}>
+    <Card sx={{ minWidth: 310 ,backgroundColor:"grey" }} >
         <CardContent
           sx={{
-            display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "flex-start",
@@ -37,7 +35,7 @@ const TeamCard = ({ memberDetails }) => {
             Date of Birth: {memberDetails?.dob}
           </Typography>
         </CardContent>
-      </CardActionArea>
+  
     </Card>
   );
 };
