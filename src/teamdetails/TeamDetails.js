@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid ,Typography} from "@mui/material";
 import { useParams } from "react-router-dom";
-import TeamCard from "./TeamCard";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import TeamCard from "../teamdetails/TeamCard"
 
 const TeamDetails = () => {
   const [teamMember, setTeamMember] = useState([]);
   const location = useParams();
 
+
   useEffect(() => {
     details();
   }, []);
 
+ 
   const details = async () => {
     try {
       const userDetails = await fetch(
         "https://raw.githubusercontent.com/JS-DevTools/static-mock-data/master/employees.json"
       );
+
       const newData = await userDetails.json();
       console.log("new Data ", newData);
       setTeamMember(newData);
@@ -65,25 +68,23 @@ const TeamDetails = () => {
   };
 
   return (
+   <>
     <Grid
       container
       spacing={2}
       sx={{
-
         flex: 1,
-        flexDirection: "column",
+        flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: "50px",
-        position:"fixed"
+        marginTop: "120px",
+        position: "fixed",
       }}
     >
-      <Grid item xs={12} sm={6} md={4} lg={3}>
+      <Grid item xs={12} sm={6} md={4} lg={3} style={{paddingRight:"30px"}}>
         <TeamCard memberDetails={getFirstNameDetails()} />
       </Grid>
-
-      <Grid item xs={12} sm={6} md={8} lg={9}>
-     
+      <Grid item xs={12} sm={6} md={6} lg={8}>
         <Carousel showThumbs={false} showStatus={false}>
           {getTeamMembersByLocation().map((member) => (
             <div key={member.id}>
@@ -93,7 +94,7 @@ const TeamDetails = () => {
         </Carousel>
       </Grid>
     </Grid>
+   </>
   );
 };
-
 export default TeamDetails;

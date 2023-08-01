@@ -26,7 +26,7 @@ const Home = () => {
           <p style={{fontSize:"50px",fontWeight:"bold"}}>Powering the Digital World with </p>
           <p style={{fontSize:"50px",fontWeight:"bold"}}>AI ,ML and Web3</p>
           <p style={{fontFamily:"cursive"}}>
-            Leverage Infrablok's Web 3 services that combine AI/ML with blockchain to creat
+            Leverage Infrablok's Web 3 services that combine AI/ML with blockchain to create
           </p>
           <p style={{fontFamily:"cursive"}}> more secure and efficient systems</p>
          </div>
