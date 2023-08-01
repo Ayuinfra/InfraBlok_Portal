@@ -1,28 +1,70 @@
 
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './navbar/NavBar';
-import About from './about/About';
-import Home from './home/Home';
-import Team from './team/Team';
-import TeamDetails from './teamdetails/TeamDetails';
 
+import { Route, Routes } from "react-router-dom";
 
-const App = () => {
-    return (
-        <>
-            <Navbar />
-            <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/about" element={<About />} />
-                <Route path="/team" element={<Team />} />
-                <Route path="/teamdetails/:id" element={<TeamDetails/>} />
-            </Routes>
-        </>
+import "./App.css";
 
+import React from "react";
 
+import Home from "./home/Home";
 
+import About from "./about/About"
 
-    );
-};
+import Team from "./team/Team";
+
+ 
+
+ 
+
+import TeamDetails from "./teamdetails/TeamDetails";
+
+import Project from "./project/Project";
+
+import Error404Page from "./errorpage/ErrorPage";
+
+import Layout from "./layout/layout";
+
+ 
+
+function App() {
+
+ 
+
+  return (
+
+    <>
+
+      <Routes>
+
+        <Route path="/" element={<Layout />}>
+
+          <Route index element={<Home />} />
+
+          <Route path="/about" element={<About />} />
+
+          <Route path="/team" element={<Team />} />
+
+          <Route path="/project" element={<Project />} />
+
+          <Route path="/teamdetails/:id" element={<TeamDetails />} />
+
+         
+
+        </Route>
+
+        <Route path="*" element={<Error404Page />} />
+
+      </Routes>
+
+    </>
+
+  );
+
+}
+
+ 
 
 export default App;
+
+ 
+

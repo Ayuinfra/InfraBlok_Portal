@@ -1,35 +1,47 @@
-import React from 'react';
-import { Toolbar, Typography, Button, AppBar } from '@mui/material';
-import { Link } from 'react-router-dom';
-import Logo from '../assets/Logo.jpg.jpg'
+import React from "react";
+import { Toolbar, Typography, Button, AppBar } from "@mui/material";
+import { Link, Outlet } from "react-router-dom";
+import Logo from "../assets/l.png";
 
 
 const Navbar = () => {
-
-    return (
-        <>
-            <AppBar position='static'>
-                <Toolbar style={{ backgroundColor: "#6D95F7", height: "10px" }}>
-                    <Typography variant="h6" sx={{ flexGrow: 1 }} >
-                        <img src={Logo} alt="InfraBlok India Pvt. Ltd" style={{ width: 30, height: 30 }} />
-                    </Typography>
-                    <Typography variant="h6" sx={{ flexGrow: 1 }} >
-                        <p style={{ color: "white" }}>InfraBlok Portal</p>
-                    </Typography>
-                    <Button color="inherit" component={Link} to="/">
-                        Home
-                    </Button>
-                    <Button color="inherit" component={Link} to="/about">
-                        About
-                    </Button>
-                    <Button color="inherit" component={Link} to="/team">
-                        Our Teams
-                    </Button>
-                </Toolbar>
-            </AppBar>
-        </>
-    );
-
+  return (
+    <>
+      <AppBar position="static">
+        <Toolbar
+          style={{
+            backgroundColor: "#b8e2f0",
+            height: "10px",
+            position: "fixed",
+            width: "98%",
+          }}
+        >
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+            <img
+              src={Logo}
+              alt="InfraBlok India Pvt. Ltd"
+              style={{ width: "auto", height: "30px" }}
+            />
+          </Typography>
+          <Button  component={Link} to="/" style={{color:"black"}}>
+            Home
+          </Button>
+          <Button  component={Link} to="/about" style={{color:"black"}}>
+            About
+          </Button>
+          <Button component={Link} to="/team" style={{color:"black"}}>
+            Our Teams
+          </Button>
+          <Button component={Link} to="/project" style={{color:"black"}}>
+            Projects
+          </Button>
+        </Toolbar>
+      </AppBar>
+      <Outlet/>
+    </>
+  );
 };
+
+ 
 
 export default Navbar;
