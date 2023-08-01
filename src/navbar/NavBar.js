@@ -1,8 +1,8 @@
+// Navbar.js
 import React from "react";
-import { Toolbar, Typography, Button, AppBar } from "@mui/material";
 import { Link, Outlet } from "react-router-dom";
+import { Toolbar, Typography, Button, AppBar } from "@mui/material";
 import Logo from "../assets/l.png";
-
 
 const Navbar = () => {
   return (
@@ -23,25 +23,26 @@ const Navbar = () => {
               style={{ width: "auto", height: "30px" }}
             />
           </Typography>
-          <Button  component={Link} to="/" style={{color:"black"}}>
+          <Button component={Link} to="/" style={{ color: "black" }}>
             Home
           </Button>
-          <Button  component={Link} to="/about" style={{color:"black"}}>
+          <Button component={Link} to="/about" style={{ color: "black" }}>
             About
           </Button>
-          <Button component={Link} to="/team" style={{color:"black"}}>
+          <Button component={Link} to="/team" style={{ color: "black" }}>
             Our Teams
           </Button>
-          <Button component={Link} to="/project" style={{color:"black"}}>
+          <Button component={Link} to="/project" style={{ color: "black" }}>
             Projects
+          </Button>
+          <Button component={Link} to="/contact" style={{ color: "black" }}>
+            Contact
           </Button>
         </Toolbar>
       </AppBar>
-      <Outlet/>
+      <Outlet />
     </>
   );
 };
-
- 
 
 export default Navbar;
