@@ -8,6 +8,23 @@ const TeamDetails = () => {
   const [teamMember, setTeamMember] = useState([]);
   const location = useParams();
 
+  useEffect(() => {
+    details();
+  }, []);
+
+  const details = async () => {
+    try {
+      const userDetails = await fetch(
+        "https://raw.githubusercontent.com/JS-DevTools/static-mock-data/master/employees.json"
+      );
+      const newData = await userDetails.json();
+      console.log("new Data ", newData);
+      setTeamMember(newData);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
   const getTeamMembersByLocation = () => {
     switch (location.id) {
       case "frontend":
@@ -27,7 +44,6 @@ const TeamDetails = () => {
     }
   };
 
-  // Get the details of the first name based on the different cases
   const getFirstNameDetails = () => {
     switch (location.id) {
       case "frontend":
